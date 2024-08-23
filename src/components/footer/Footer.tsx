@@ -1,6 +1,9 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
 
 export default function Footer() {
+
+let data = new Date().getFullYear()
+
   return (
     <>
         <div className="
@@ -22,7 +25,8 @@ export default function Footer() {
             text-xl 
             font-bold
             ">
-                Blog pessoal Generation | Copyright: </p>
+                Blog pessoal Generation | Copyright: {data}
+                </p>
 
             <p className="text-lg
             ">
@@ -32,10 +36,15 @@ export default function Footer() {
             flex 
             gap-2
             ">
+              <a href="" target="_blank">
               <LinkedinLogo size={48} weight="fill" />
-              <InstagramLogo size={48} weight="fill" />
-              <FacebookLogo size={48} weight="fill" />
-
+              </a>
+                <a href="" target="_blank">
+                <InstagramLogo size={48} weight="fill" />
+                </a>
+                <a href="" target="_blank">
+                <FacebookLogo size={48} weight="fill"/>
+                </a>
             </div>
           </div>
         </div>
