@@ -47,6 +47,7 @@ import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
 import Tema from "../../../models/Tema";
 import { atualizar, buscar, cadastrar } from "../../../service/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 
 function FormularioTema() {
@@ -86,7 +87,7 @@ function FormularioTema() {
     // Monitorar o Token
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!');
+            ToastAlerta('Você precisa estar logado!', "info");
             navigate('/')
         }
     }, [token])
@@ -117,7 +118,7 @@ function FormularioTema() {
                 await atualizar(`/temas`, tema, setTema, {
                     headers: { Authorization: token }
                 });
-                alert('Tema atualizado com sucesso!');
+                ToastAlerta('Tema atualizado com sucesso!', "sucesso");
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
@@ -132,7 +133,7 @@ function FormularioTema() {
                 await cadastrar(`/temas`, tema, setTema, {
                     headers: { Authorization: token }
                 });
-                alert('Tema cadastrado com sucesso!');
+                ToastAlerta('Tema cadastrado com sucesso!', "sucesso");
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
