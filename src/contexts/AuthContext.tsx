@@ -40,7 +40,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
             ToastAlerta("Usuário autenticado com sucesso!", "sucesso")
 
         } catch (error) {
-            ToastAlerta("Os dados do usuário estão insosistentes! ", "erro")
+            ToastAlerta("Os dados do usuário estão inconsistentes! ", "erro")
 
         }
 
